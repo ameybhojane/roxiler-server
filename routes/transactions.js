@@ -3,13 +3,8 @@ const router = express.Router();
 const Transaction = require('../models/transactions');
 const axios = require('axios');
 const { Op } = require('sequelize');
-const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize('sql6685510', 'sql6685510', '5Hij3QPwjF', {
-    host: 'sql6.freesqldatabase.com',
-    dialect: 'mysql',
-    dialectModule: 'mysql2'
-});
+const sequelize = require('../database/db')
 const { QueryTypes } = require('sequelize');
 
 router.get('/getAll', async (req, res) => {
